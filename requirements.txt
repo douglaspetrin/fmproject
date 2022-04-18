@@ -2,6 +2,7 @@ attrs==21.4.0
 certifi==2021.10.8
 charset-normalizer==2.0.12
 click==8.1.2
+coverage==6.3.2
 Flask==2.1.1
 Flask-HTTPAuth==4.5.0
 Flask-SQLAlchemy==2.5.1
@@ -18,6 +19,7 @@ py==1.11.0
 PyMySQL==1.0.2
 pyparsing==3.0.8
 pytest==7.1.1
+pytest-cov==3.0.0
 requests==2.27.1
 SQLAlchemy==1.4.35
 tomli==2.0.1
