@@ -1,0 +1,43 @@
+version: '3'
+services:
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "5000:5000"
+        volumes:
+            - .:/fmapi
+        links:
+            # network connection with these services
+            - mysql
+        depends_on:
+            - mysql
+        environment:
+            FRAMEAPI_SECRET_KEY: "KkKaadS2(n@!!_8*toP"
+            AUTH_TOKEN_EXPIRES_IN: 1200
+            LOG_TO_FILE: 1
+            DB_HOST: mysql
+            DB_NAME: fmapi
+            DB_USER: doug
+            DB_PASSWORD: epa12
+    mysql:
+        container_name: flask_mysql
+        image: mysql:5.7
+        ports:
+            - "3306:3306"
+        volumes:
+            # pass volume named mysql-data to mysql container
+            - mysql-data:/var/lib/mysql
+        restart: unless-stopped
+        labels:
+            project: "fmapi"
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: fmapi
+            MYSQL_USER: doug
+            MYSQL_PASSWORD: epa12
+
+volumes:
+  mysql-data:
+    driver: local
