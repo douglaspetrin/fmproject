@@ -14,7 +14,7 @@ services:
         depends_on:
             - mysql
         environment:
-            FRAMEAPI_SECRET_KEY: "KkKaadS2(n@!!_8*toP"
+            FMAPI_SECRET_KEY: "KkKaadS2(n@!!_8*toP"
             AUTH_TOKEN_EXPIRES_IN: 1200
             LOG_TO_FILE: 1
             DB_HOST: mysql
