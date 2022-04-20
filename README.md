@@ -5,9 +5,8 @@ FMApi is a REST API developed in Flask. Its goal is to return the first five ite
 ### Getting started
  To clone repository, build and run containers:
 
-    git clone https://github.com/douglaspetrin/fmproject.git  
-    docker-compose build
-    docker-compose up
+    git clone https://github.com/douglaspetrin/fmproject.git
+    docker-compose up -d --build
 
 After running commands above it will build and run two images `fmproject_web` and `mysql:5.7`.
 
@@ -32,9 +31,8 @@ That's all! You are good to go and test the application!
     curl --location --request POST 'http://localhost:5000/' --header 'Authorization: Bearer <access_token>' --header 'Content-Type: application/json' --data-raw '{"only_id_title": 1}'
 
 ### Testing
-**make sure to execute `docker-compose build` and `docker-compose up` before running tests.
-- Get docker container id: `docker ps`
-- Run test with pytest: `docker exec -it <containerId> pytest --cov=fmapi tests/`
+**make sure to execute `docker-compose up -d --build` before running tests.
+- Run test with pytest: `docker-compose exec web pytest --cov=fmapi tests/`
 
 ### Settings:
 
