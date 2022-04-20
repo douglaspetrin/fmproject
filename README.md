@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/douglaspetrin/fmproject/tree/main.svg?style=svg)](https://circleci.com/gh/douglaspetrin/fmproject/tree/main)
 ## FMApi
 
 FMApi is a REST API developed in Flask. Its goal is to return the first five items from https://jsonplaceholder.typicode.com/todos.
