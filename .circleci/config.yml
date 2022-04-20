@@ -13,10 +13,7 @@ jobs:
             apk add --no-cache py-pip=9.0.0-r1
             pip install docker-compose==1.15.0
       - run:
-          name: Build and run
-          command: |
-            docker-compose up -d --build
-      - run:
           name: Run tests
           command: |
+            docker-compose up -d --build
             docker-compose exec web pytest --cov=fmapi tests/
